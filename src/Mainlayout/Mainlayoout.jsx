@@ -1,9 +1,11 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
+
 const Mainlayoout = () => {
     return (
-        <div>
+        <div className=' container mx-auto '>
+
             <Outlet></Outlet>
 
         </div>

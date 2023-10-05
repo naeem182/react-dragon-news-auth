@@ -13,7 +13,9 @@ const Register = () => {
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password)
+        const name = form.get('name');
+        const photourl = form.get('photourl');
+        console.log(name, photourl, email, password)
 
     }
 
@@ -32,10 +34,25 @@ const Register = () => {
                             <form onSubmit={handleRegister}>
                                 <div className="form-control">
                                     <label className="label">
+                                        <span className="label-text">Your Name</span>
+                                    </label>
+                                    <input type="text" name="name" placeholder="Enter your Name" className="input input-bordered" required />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Photo Url</span>
+                                    </label>
+                                    <input type="text" name="photourl" placeholder="photourl" className="input input-bordered" />
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
                                     <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                                 </div>
+
+
+
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>

@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom"
 import Navbar from "../../Navbar/Navbar"
+import { useContext } from "react"
+import { AuthContex } from "../../Provider/Authprovider";
+
 
 
 const Register = () => {
 
+    const { createUser } = useContext(AuthContex);
+
     const handleRegister = e => {
+
         e.preventDefault();
         // console.log("paisi")
         // const email = e.target.email.value;
@@ -16,6 +22,15 @@ const Register = () => {
         const name = form.get('name');
         const photourl = form.get('photourl');
         console.log(name, photourl, email, password)
+
+        //create user
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(error => {
+                console.error(error)
+            })
 
     }
 

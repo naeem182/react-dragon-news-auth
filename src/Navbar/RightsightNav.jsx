@@ -1,5 +1,6 @@
 
 import { FaGooglePlusG, FaGithub, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+
 import Qzone1 from '../assets/asset/qZone1.png'
 import Qzone2 from '../assets/asset/qZone2.png'
 import Qzone3 from '../assets/asset/qZone3.png'

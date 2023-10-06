@@ -1,11 +1,14 @@
 import { useContext } from "react"
 import { AuthContex } from "../Provider/Authprovider"
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
 
 const PriateRoute = ({ children }) => {
 
     const { user, loading } = useContext(AuthContex)
+
+    const location = useLocation()
+    console.log(location.pathname)
 
 
     if (loading) {

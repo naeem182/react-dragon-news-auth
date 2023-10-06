@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation, useNavigate } from "react-router-dom"
 import Navbar from "../../Navbar/Navbar"
 import { useContext } from "react"
 import { AuthContex } from "../../Provider/Authprovider"
@@ -7,6 +7,8 @@ import { AuthContex } from "../../Provider/Authprovider"
 const Login = () => {
 
     const { signin } = useContext(AuthContex)
+    const location = useLocation()
+    const navigate = useNavigate()
 
     const handleLogin = e => {
         e.preventDefault();
@@ -22,6 +24,9 @@ const Login = () => {
         signin(email, password)
             .then(result => {
                 console.log(result.user);
+                {
+                    navigate(location?.state ? location.state : "/")
+                }
 
             })
             .catch(error => {

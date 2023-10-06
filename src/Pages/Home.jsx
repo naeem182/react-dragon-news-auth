@@ -9,7 +9,7 @@ import NewsCard from "./NewsPages/NewsCard"
 const Home = () => {
 
     const news = useLoaderData();
-    console.log(news);
+    // console.log(news);
 
     return (
         <div>
